@@ -10,7 +10,7 @@ const Header = () => {
         </a>
         </p>
       </div>
-        <span className='d-flex justify-content-center mt-4 text-light'>Choose a day:</span>
+        <span className='d-flex justify-content-center mt-4 text-light'>Choose a date:</span>
     </div>
   )
 }
