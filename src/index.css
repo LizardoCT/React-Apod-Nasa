@@ -19,16 +19,6 @@ body{
   margin-bottom: 20px !important;
 }
 
-.fab{
-  color: rgba(133, 161, 209, 0.651) !important;
-}
-.fab:hover{
-  color: rgb(129, 141, 247) !important;
-  /* filter: blur(1px);
-  opacity: 10;
-  transition: 1s; */
-}
-
 /* glass efect */
 
 .glass-nav{
@@ -117,8 +107,8 @@ input:hover {
 .link-nav:hover{
   color: rgb(129, 141, 247) !important;
 }
-.scroll{
-  background: rgba(161, 161, 161, 0.452);
+#scroll{
+  background: rgba(161, 161, 161, 0.452) !important;
 }
 
 .api-url{
@@ -137,6 +127,16 @@ input:hover {
 
 /* footer animation */
 
+.fab{
+  color: rgba(133, 161, 209, 0.651) !important;
+}
+.fab:hover{
+  color: rgb(129, 141, 247) !important;
+  /* filter: blur(1px);
+  opacity: 10;
+  transition: 1s; */
+}
+
 .contenido i{
   width: 60px;
   filter: drop-shadow(0 5px 1px #1919d6);
@@ -145,10 +145,10 @@ input:hover {
 @keyframes flutuar {
   0%,
   100%{
-    transform: translateY(5px);
+    transform: translateY(6px);
   }
   50%{
-    transform: translateY(-10px);
+    transform: translateY(-8px);
   }
 }
 
@@ -163,6 +163,12 @@ input:hover {
 }
 .contenido5{
   animation-delay: 0.9s !important;
+}
+
+footer p a{
+  text-decoration: none;
+  margin-left: 5px;
+  color: rgb(129, 141, 247);
 }
 
 /* scroll animation */
