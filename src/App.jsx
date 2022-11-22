@@ -31,8 +31,11 @@ function App() {
       <Header />
       <input
         className="d-flex justify-content-center m-auto mt-2 text-light"
-        type="date" 
-        onInput={datePicker}>
+        type="date"
+        onInput={datePicker}
+        min="1995-06-16"
+        // max="2022-11-18"
+        >
       </input>
       <Card
         title={nasa.title}
