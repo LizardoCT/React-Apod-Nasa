@@ -10,8 +10,8 @@ const Card = (props) => {
         <div className='card-body text-light'>
 
             <h3 className='text-center mb-4 mt-2 font-monospace fw-bold'>{props.title}</h3>
-            <img className='img-fluid img-nasa rounded mx-auto d-block' src={props.url} alt={props.title} />
             <h5 className='title mb-3 text-center font-monospace'>{props.date}</h5>
+            <img className='img-fluid img-nasa rounded mx-auto d-block' src={props.url} alt={props.title} />
             <h5 className='title mb-3 text-center font-monospace'>Photographed by: {props.copyright}</h5>
             <p className='title mb-3 text-center font-monospace'>
               <a className='api-url ' target='blank' href={props.hdurl}>{props.hdurl}</a>
@@ -32,8 +32,8 @@ const Card = (props) => {
         <div className='card-body text-light'>
 
             <h3 className='text-center mb-4 mt-2 font-monospace fw-bold'>{props.title}</h3>
-            <iframe className='img-fluid img-nasa rounded video' src={props.url} alt={props.title}></iframe>
             <h5 className='title mb-3 text-center font-monospace'>{props.date}</h5>
+            <iframe className='img-fluid img-nasa rounded video' src={props.url} alt={props.title}></iframe>
             <p className='title mb-3 text-center font-monospace'>
               <a className='api-url ' target='blank' href={props.url}>{props.url}</a>
             </p>
