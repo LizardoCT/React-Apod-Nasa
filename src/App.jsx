@@ -34,7 +34,8 @@ function App() {
         type="date"
         onInput={datePicker}
         min="1995-06-16"
-        // max="2022-11-18"
+        max={new Date().toISOString().split('T')[0]}
+        // value={""}
         >
       </input>
       <Card
