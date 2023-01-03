@@ -17,7 +17,7 @@ const Footer = () => {
             <li className='list-inline-item'><a className="link-nav" href='#'>Privacy Policy</a></li>
           </ul>
           <p className='d-flex justify-content-center m-0 pb-1 text-ligth-50 c'>
-          Apod NASA © 2022. By<a target='blank' href='https://github.com/LizardoCt'>nene.</a>
+          © 2023 Apod Nasa. By<a target='blank' href='https://github.com/LizardoCt'>nene.</a>
           </p>
         </div>
         <ScrollToTop id="scroll" smooth color="white" style={{background:"rgba(161, 161, 161, 0.452)"}} />
