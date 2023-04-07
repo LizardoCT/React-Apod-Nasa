@@ -43,7 +43,7 @@ function App() {
         media={nasa.media_type}
         url={nasa.url}
         date={nasa.date}
-        copyright={nasa.copyright}
+        // copyright={nasa.copyright}
         hdurl={nasa.hdurl}
         description={nasa.explanation}
       />
