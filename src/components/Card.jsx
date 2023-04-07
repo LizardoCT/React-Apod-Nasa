@@ -11,9 +11,9 @@ const Card = (props) => {
 
             <h3 className='text-center mb-4 mt-2 font-monospace fw-bold'>{props.title}</h3>
             <h5 className='title mb-3 text-center font-monospace'>{props.date}</h5>
-            <img className='img-fluid img-nasa rounded mx-auto d-block' src={props.url} alt={props.title} />
-            <h5 className='title mb-3 text-center font-monospace'>Photographed by: {props.copyright}</h5>
-            <p className='title mb-3 text-center font-monospace'>
+            <img className='img-fluid img-nasa rounded mx-auto d-block' src={props.url} alt={props.title} title={props.title}/>
+            <h5 className='title mb-1 mt-4 text-center font-monospace'>Picture Full HD</h5>
+            <p className='title mb-4 text-center font-monospace'>
               <a className='api-url ' target='blank' href={props.hdurl}>{props.hdurl}</a>
             </p>
             <p className='fst-italic api-description'>{props.description}</p>
