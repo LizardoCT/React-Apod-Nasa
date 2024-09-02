@@ -79,14 +79,6 @@ input:hover {
   text-align: justify !important;
 }
 
-/* nasa-logo has changed by nasa-gif*/
-
-/* .nasa-logo{
-  height: 60px;
-  margin-right: 10px;
-  cursor: pointer;
-} */
-
 .nav-bg {
   padding: 0px 5px;
   user-select: none;
@@ -94,19 +86,20 @@ input:hover {
 
 .nasa-gif {
   height: 130px;
-  /* margin-right: 10px; */
   cursor: pointer;
 }
 
 @media (max-width: 655px) {
+  .App {
+    display: block;
+  }
+
   .nasa-gif {
     height: 100px;
   }
 
   .text-media {
-    display: flex;
-    align-items: center;
-    padding-right: 30px;
+    max-width: 250px;
   }
 }
 
