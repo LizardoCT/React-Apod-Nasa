@@ -3,9 +3,11 @@ import gif from '../assets/images/nasagif.gif'
 
 const Navbar = () => {
   return (
-    <div className='text-center nav-bg fw-bold fs-2 text-light glass-nav text-media'>
-        <img src={gif} className='nasa-logo nasa-gif' />
-      NASA Astronomy Picture of the Day
+    <div className='nav-bg glass-nav d-flex align-items-center justify-content-center'>
+      <img src={gif} className='nasa-logo nasa-gif' />
+      <h1 className='text-media text-light fs-2 fw-bold'>
+        Astronomy Picture of the Day - NASA
+      </h1>
     </div>
   )
 }
