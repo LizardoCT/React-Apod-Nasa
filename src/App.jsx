@@ -5,16 +5,17 @@ import Card from './components/Card'
 import Header from './components/Header'
 
 function App() {
+  const today = new Date().toISOString().split('T')[0]
   const [nasa, setNasa] = useState([])
-  const [inputDate, setInputDate] = useState(
-    'https://api.nasa.gov/planetary/apod?api_key=n90lOqMPXcN0ndMYCb1XEgJqVZP3AhfcOqmVoI7W'
-  )
+  const [inputDate, setInputDate] = useState(today)
 
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     setIsLoading(true)
-    fetch(inputDate)
+    fetch(
+      `https://api.nasa.gov/planetary/apod?api_key=n90lOqMPXcN0ndMYCb1XEgJqVZP3AhfcOqmVoI7W&date=${inputDate}`
+    )
       .then((response) => response.json())
       .then((result) => {
         setNasa(result)
@@ -27,9 +28,7 @@ function App() {
   }, [inputDate])
 
   const datePicker = (e) => {
-    setInputDate(
-      `https://api.nasa.gov/planetary/apod?api_key=n90lOqMPXcN0ndMYCb1XEgJqVZP3AhfcOqmVoI7W&date=${e.target.value}`
-    )
+    setInputDate(e.target.value)
   }
 
   const formatDate = (dateString) => {
@@ -45,12 +44,12 @@ function App() {
       <main>
         <Header />
         <input
-          className='d-flex justify-content-center m-auto mt-2 text-light'
+          className='d-flex justify-content-center m-auto mt-2 text-light font-monospace fst-italic'
           type='date'
-          onInput={datePicker}
+          value={inputDate}
+          onChange={datePicker}
           min='1995-06-16'
-          max={new Date().toISOString().split('T')[0]}
-          // value={""}
+          max={today}
         ></input>
         <Card
           title={nasa.title}

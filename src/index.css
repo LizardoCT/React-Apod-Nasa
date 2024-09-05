@@ -116,18 +116,13 @@ footer {
   background: rgba(161, 161, 161, 0.336) !important;
 }
 
-.api-url {
-  margin-left: 10px;
-  color: rgb(129, 141, 247) !important;
-}
-
 .img-nasa {
   width: 70vh;
   margin-bottom: 5px;
 }
 
-.copyright {
-  color: rgb(119, 126, 190);
+.text-purple {
+  color: rgb(129, 141, 247);
 }
 
 /* footer animation */
@@ -196,7 +191,7 @@ footer p a {
 /* scroll animation */
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 13px;
   background-color: rgba(0, 0, 0, 0.849);
 }
 
