@@ -10,11 +10,19 @@ function App() {
     'https://api.nasa.gov/planetary/apod?api_key=n90lOqMPXcN0ndMYCb1XEgJqVZP3AhfcOqmVoI7W'
   )
 
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
+    setIsLoading(true)
     fetch(inputDate)
       .then((response) => response.json())
       .then((result) => {
         setNasa(result)
+        setIsLoading(false)
+      })
+      .catch(() => {
+        setIsLoading(false)
+        console.log('error')
       })
   }, [inputDate])
 
@@ -22,6 +30,13 @@ function App() {
     setInputDate(
       `https://api.nasa.gov/planetary/apod?api_key=n90lOqMPXcN0ndMYCb1XEgJqVZP3AhfcOqmVoI7W&date=${e.target.value}`
     )
+  }
+
+  const formatDate = (dateString) => {
+    if (!dateString) return '' // verifica si dateString es undefined o null
+
+    const [year, month, day] = dateString.split('-')
+    return `${day}/${month}/${year}`
   }
 
   return (
@@ -41,10 +56,11 @@ function App() {
           title={nasa.title}
           media={nasa.media_type}
           url={nasa.url}
-          date={nasa.date}
-          // copyright={nasa.copyright}
+          date={formatDate(nasa.date)}
+          copyright={nasa.copyright}
           hdurl={nasa.hdurl}
           description={nasa.explanation}
+          isLoading={isLoading}
         />
       </main>
       <Footer />

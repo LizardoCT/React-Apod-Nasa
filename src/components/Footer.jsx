@@ -17,17 +17,58 @@ const Footer = () => {
         </div>
         <ul className='d-flex justify-content-center container mt-1 gap-4 text-light'>
           <li className='list-inline-item'>
-            <span>Home</span>
+            <a
+              className='links_footer'
+              target='blank'
+              href='https://apod.nasa.gov/apod/lib/aptree.html'
+            >
+              Home
+            </a>
           </li>
           <li className='list-inline-item'>
-            <span>About</span>
+            <a
+              className='links_footer'
+              target='blank'
+              href='https://apod.nasa.gov/apod/lib/about_apod.html#srapply'
+            >
+              About
+            </a>
           </li>
           <li className='list-inline-item'>
-            <span>Privacy Policy</span>
+            <a
+              className='links_footer'
+              target='blank'
+              href='https://www.nasa.gov/privacy/'
+            >
+              Privacy Policy
+            </a>
           </li>
         </ul>
         <p className='d-flex justify-content-center m-0 pb-1 text-ligth-50 c'>
-          © 2023. By
+          Authors & editors:
+          <a
+            className='me-2'
+            target='blank'
+            href='https://www.mtu.edu/physics/department/faculty/nemiroff/'
+          >
+            Robert Nemiroff
+          </a>
+          &
+          <a
+            target='blank'
+            href='https://apod.nasa.gov/htmltest/jbonnell/www/bonnell.html'
+          >
+            Jerry Bonnell
+          </a>
+        </p>
+        <p className='d-flex justify-content-center m-0 pb-1 text-ligth-50 c'>
+          © 2024 All rights reserved by{' '}
+          <a target='blank' href='https://www.nasa.gov/'>
+            NASA
+          </a>
+        </p>
+        <p className='d-flex justify-content-center m-0 pb-1 text-ligth-50 c'>
+          Created and designed by
           <a target='blank' href='https://github.com/LizardoCt'>
             nene.
           </a>
