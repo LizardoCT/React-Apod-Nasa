@@ -62,7 +62,7 @@ const Footer = () => {
           </a>
         </p>
         <p className='d-flex justify-content-center m-0 pb-1 text-ligth-50 c'>
-          © 2024 All rights reserved by{' '}
+          © 2025 All rights reserved by{' '}
           <a target='blank' href='https://www.nasa.gov/'>
             NASA
           </a>
