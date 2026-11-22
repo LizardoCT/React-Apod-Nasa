@@ -1,4 +1,5 @@
 import React from 'react'
+import { apodImageDimensions } from '../utils/apodImage'
 
 const CardShell = ({ children, fixedHeight = false }) => (
   <div className='container mt-5 pb-3 mb-5 d-flex justify-content-center'>
@@ -15,6 +16,7 @@ const Card = ({
   title,
   mediaType,
   imageUrl,
+  imageUrlFull,
   articleUrl,
   videoUrl,
   videoKind,
@@ -25,7 +27,9 @@ const Card = ({
 }) => {
   const isVideo = mediaType === 'video'
   const copyrightText = copyright || 'NASA'
-  const mediaSrc = imageUrl || articleUrl
+  const displaySrc = imageUrl || articleUrl
+  const fullImageUrl = imageUrlFull || displaySrc
+  const imageDims = apodImageDimensions(imageUrl)
 
   if (isLoading) {
     return (
@@ -79,6 +83,10 @@ const Card = ({
             className='img-fluid img-nasa rounded mx-auto d-block mb-3'
             src={imageUrl}
             alt={title}
+            decoding='async'
+            {...(imageDims
+              ? { width: imageDims.width, height: imageDims.height }
+              : {})}
           />
         )}
         <p className='text-center'>
@@ -97,17 +105,23 @@ const Card = ({
       {!isVideo ? (
         <div>
           <a
-            href={mediaSrc}
+            href={fullImageUrl}
             target='_blank'
             rel='noopener noreferrer'
             style={{ cursor: 'zoom-in' }}
+            aria-label={`Open full-size image: ${title}`}
           >
             <img
               className='img-fluid img-nasa rounded mx-auto d-block'
-              src={mediaSrc}
+              src={displaySrc}
               alt={title}
               title={title}
               draggable='false'
+              fetchPriority='high'
+              decoding='async'
+              {...(imageDims
+                ? { width: imageDims.width, height: imageDims.height }
+                : {})}
             />
           </a>
           <p className='text-center m-auto font-monospace text-purple'>

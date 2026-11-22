@@ -12,6 +12,7 @@ const ApodSection = ({ date }) => {
       title={apod?.title}
       mediaType={apod?.mediaType}
       imageUrl={apod?.imageUrl}
+      imageUrlFull={apod?.imageUrlFull}
       articleUrl={apod?.articleUrl}
       videoUrl={apod?.videoUrl}
       videoKind={apod?.videoKind}

@@ -2,16 +2,20 @@ import { APOD_API_BASE } from '../constants/apod'
 import { toApodSlug } from '../utils/date'
 import { parseCopyright, stripHtml } from '../utils/html'
 import { extractVideoFromHtml } from '../utils/apodMedia'
+import { apodDisplayImageUrl } from '../utils/apodImage'
 
 function mapApodResponse(raw) {
   const isVideo = raw.media_type === 'video'
   const video = isVideo ? extractVideoFromHtml(raw.basic_html) : null
 
+  const imageUrlFull = raw.hdurl ?? null
+
   return {
     title: raw.title,
     date: raw.date,
     mediaType: isVideo ? 'video' : 'image',
-    imageUrl: raw.hdurl,
+    imageUrl: apodDisplayImageUrl(imageUrlFull),
+    imageUrlFull,
     articleUrl: raw.url ?? raw.permalink,
     videoUrl: video?.src ?? null,
     videoKind: video?.kind ?? null,

@@ -127,19 +127,17 @@ footer {
 
 /* footer animation */
 
-.fab {
+.social-icon {
   color: rgba(133, 161, 209, 0.651) !important;
 }
 
-.fab:hover {
+.social-icon:hover {
   color: rgb(129, 141, 247) !important;
-  /* filter: blur(1px);
-  opacity: 10;
-  transition: 1s; */
 }
 
-.contenido i {
+.contenido .social-icon {
   width: 60px;
+  height: 60px;
   filter: drop-shadow(0 5px 1px #1919d6);
   animation: flutuar 3s linear infinite;
 }
